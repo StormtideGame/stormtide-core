@@ -17,7 +17,12 @@
 
 <div>&nbsp;</div>
 
-This is the repository for the core of Stormtide, containing all mechanisms to represent and run the game.
+This is the repository for the core of Stormtide, containing all mechanisms to represent and run the game. It contains no interface.
+
+## Primary Goals
+- Clean, tested codebase
+- High rules accuracy
+- Deterministic game replays
 
 ## License
 Stormtide Core is licensed under the MIT license. See the [LICENSE file](LICENSE.md) for more details.
