@@ -9,6 +9,9 @@
 	<a href="https://www.npmjs.com/package/stormtide-core">
 		<img src="https://img.shields.io/npm/v/stormtide-core.svg" />
 	</a>
+	<a href="https://gitter.im/StormtideGame/Lobby">
+		<img src="https://img.shields.io/gitter/room/stormtidegame/stormtide-core.svg" />
+	</a>
 </div>
 
 <div align="center">
