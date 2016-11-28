@@ -2,16 +2,16 @@
 
 import type { CardDescriptor } from "./CardDescriptor";
 
-export type CardEntity = {
+export type CardEntity = {|
 	isCard: true,
 	descriptor: CardDescriptor,
 	owner: string
-};
+|};
 
-export type PermanentEntity = CardEntity & {
+export type PermanentEntity = CardEntity & {|
 	isPermanent: true,
 	controller: string
-};
+|};
 
 /**
  * Represents an entity in the game
