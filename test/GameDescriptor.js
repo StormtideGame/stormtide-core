@@ -13,7 +13,7 @@ describe("GameDescriptor", () => {
 	it("should have expected properties", () => {
 		const settings = new GameDescriptor();
 
-		expect(settings).to.have.all.keys(
+		expect(settings).to.contain.all.keys(
 			"players"
 		);
 	});

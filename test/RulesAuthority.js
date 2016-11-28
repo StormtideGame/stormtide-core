@@ -1,7 +1,7 @@
 // @flow
 
 import { expect } from "chai";
-import { GameDescriptor, RulesAuthority } from "stormtide-core";
+import { GameDescriptor, Game, RulesAuthority } from "stormtide-core";
 
 describe("RulesAuthority", () => {
 	it("should be constructable", () => {
@@ -13,10 +13,11 @@ describe("RulesAuthority", () => {
 
 	it("should throw on getInitialState", () => {
 		const settings = new GameDescriptor();
-		const rules = new RulesAuthority(settings);
+		const game = new Game(settings);
+		const rules = new RulesAuthority();
 
 		const using = () => {
-			rules.getInitialState();
+			rules.getInitialState(game);
 		};
 
 		expect(rules.getInitialState).to.be.a("function");

@@ -11,5 +11,6 @@ export { default as generateId } from "./generateId";
 export type { CardDescriptor } from "./CardDescriptor";
 export type { DeckDescriptor } from "./DeckDescriptor";
 export type { GameAction } from "./GameAction";
+export type { GameEntity } from "./GameEntity";
 export type { PlayerDescriptor } from "./PlayerDescriptor";
 export type { PlayerState } from "./PlayerState";

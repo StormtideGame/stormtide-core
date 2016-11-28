@@ -1,6 +1,7 @@
 // @flow
 
 import type { PlayerState } from "./PlayerState";
+import type { GameEntity } from "./GameEntity";
 
 type Mapish<V> = {
 	[key: string]: ?V
@@ -10,5 +11,7 @@ type Mapish<V> = {
  * Describes the game state from action to action.
  */
 export type GameState = {
-	players: Mapish<PlayerState>
+	players: Mapish<PlayerState>,
+	playerTurnOrder: string[],
+	stack: GameEntity[]
 };
