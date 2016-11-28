@@ -33,6 +33,7 @@ export default class DefaultRulesAuthority extends RulesAuthority {
 		return {
 			players,
 			playerTurnOrder,
+			priority: null,
 			stack: []
 		};
 	}

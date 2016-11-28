@@ -13,19 +13,32 @@ describe("Game", () => {
 		expect(game.settings).to.have.all.keys(...Object.keys(settings));
 	});
 
-	it("should process actions", () => {
+	it("should process dispatched actions", () => {
 		const settings = new GameDescriptor();
 		const game = new Game(settings);
 
 		const action: GameAction = {
-			type: "Nothing",
-			player: ""
+			type: "Nothing"
 		};
-
-		expect(game.state).to.be.an("object");
 
 		game.dispatchAction(action);
 
 		expect(game.state).to.be.an("object");
+		expect(game.history).to.contain(action);
+	});
+
+	it("should process queued actions", () => {
+		const settings = new GameDescriptor();
+		const game = new Game(settings);
+
+		const action: GameAction = {
+			type: "Nothing"
+		};
+
+		game.queueAction(action);
+		game.processActionQueue();
+
+		expect(game.state).to.be.an("object");
+		expect(game.history).to.contain(action);
 	});
 });

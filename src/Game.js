@@ -21,6 +21,7 @@ export default class Game {
 	constructor(settings: GameDescriptor) {
 		this.settings = settings;
 		this.history = [];
+		this._actionQueue = [];
 
 		// Temporary
 		this.rules = new DefaultRulesAuthority();
@@ -36,7 +37,7 @@ export default class Game {
 
 		this.state = this.rules.processAction(this, action);
 
-		this.processQueue();
+		this.processActionQueue();
 	}
 
 	/**
@@ -47,7 +48,10 @@ export default class Game {
 		this._actionQueue.push(action);
 	}
 
-	processQueue() {
+	/**
+	 * Processes any actions that have been placed into the queue.
+	 */
+	processActionQueue() {
 		while (this._actionQueue.length > 0) {
 			const action = this._actionQueue.pop();
 

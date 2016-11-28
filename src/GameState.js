@@ -13,5 +13,6 @@ type Mapish<V> = {
 export type GameState = {
 	players: Mapish<PlayerState>,
 	playerTurnOrder: string[],
+	priority: ?string,
 	stack: GameEntity[]
 };

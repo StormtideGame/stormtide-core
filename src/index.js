@@ -14,3 +14,7 @@ export type { GameAction } from "./GameAction";
 export type { GameEntity } from "./GameEntity";
 export type { PlayerDescriptor } from "./PlayerDescriptor";
 export type { PlayerState } from "./PlayerState";
+
+// Test Data
+export { default as DefaultCardPool } from "./DefaultCardPool";
+export { default as DefaultDeck } from "./DefaultDeck";
