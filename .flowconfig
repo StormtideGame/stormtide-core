@@ -1,0 +1,14 @@
+[version]
+^0.34
+
+[ignore]
+<PROJECT_ROOT>/index.js
+<PROJECT_ROOT>/node_modules/.*
+
+[libs]
+decls/
+
+[options]
+module.name_mapper='^stormtide-core$' -> '<PROJECT_ROOT>/src/index'
+module.use_strict=true
+esproposal.decorators=ignore
