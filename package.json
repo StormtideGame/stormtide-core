@@ -8,7 +8,8 @@
     "test": "npm run -s lint && flow && cross-env NODE_ENV=test nyc mocha",
     "coverage": "cross-env NODE_ENV=test nyc --reporter lcov mocha",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "prepublish": "rm -rf lib; gulp"
+    "prepublish": "rm -rf lib; gulp",
+    "todo": "leasot {src,test}/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-plumber": "^1.1.0",
     "gulp-sourcemaps": "^2.2.0",
+    "leasot": "^4.2.1",
     "mocha": "^3.1.2",
     "nyc": "^9.0.1",
     "source-map-support": "^0.4.6"
