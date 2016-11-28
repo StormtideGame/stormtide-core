@@ -24,7 +24,7 @@ describe("RulesAuthority", () => {
 		const using = () => {
 			// Totally incorrect usage of processAction
 			const any = (null: any);
-			rules.processAction(any, any);
+			rules.processAction(any, any, any);
 		};
 
 		expect(using).to.throw(Error);

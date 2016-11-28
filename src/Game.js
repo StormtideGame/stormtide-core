@@ -25,6 +25,6 @@ export default class Game {
 	dispatchAction(action: GameAction) {
 		this.history.push(action);
 
-		this.state = this.rules.processAction(this.state, action);
+		this.state = this.rules.processAction(this.state, action, this.settings);
 	}
 }

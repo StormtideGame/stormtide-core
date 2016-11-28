@@ -1,7 +1,8 @@
 // @flow
 
 import { expect } from "chai";
-import { DefaultRulesAuthority } from "stormtide-core";
+
+import { DefaultRulesAuthority, GameDescriptor } from "stormtide-core";
 import type { GameAction } from "stormtide-core";
 
 describe("DefaultRulesAuthority", () => {
@@ -11,7 +12,7 @@ describe("DefaultRulesAuthority", () => {
 		expect(rules).to.be.ok;
 	});
 
-	it("should process actions", () => {
+	it("should no-op process actions", () => {
 		const rules = new DefaultRulesAuthority();
 
 		const action: GameAction = {
@@ -20,7 +21,8 @@ describe("DefaultRulesAuthority", () => {
 		};
 
 		const state = rules.getInitialState();
-		const newState = rules.processAction(state, action);
+		const settings = new GameDescriptor();
+		const newState = rules.processAction(state, action, settings);
 
 		expect(newState).to.be.an("object");
 	});

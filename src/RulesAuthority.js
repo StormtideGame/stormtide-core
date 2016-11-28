@@ -1,5 +1,7 @@
 // @flow
 
+import type GameDescriptor from "./GameDescriptor";
+
 import type { GameState } from "./GameState";
 import type { GameAction } from "./GameAction";
 
@@ -10,7 +12,7 @@ export default class RulesAuthority {
 		};
 	}
 
-	processAction(state: GameState, action: GameAction): GameState {
+	processAction(state: GameState, action: GameAction, settings: GameDescriptor): GameState {
 		throw new Error("processAction is not implemented");
 	}
 }
