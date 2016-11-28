@@ -2,7 +2,7 @@
 
 export default class FooBar {
 	constructor() {
-		console.log("FooBar made!");
+		console.log("FooBar constructed!");
 	}
 
 	foo() {
