@@ -1,6 +1,11 @@
 // @flow
 
-export default class GameState {
-	constructor() {
-	}
-}
+import PlayerDescriptor from "./PlayerDescriptor";
+
+type Mapish<V> = {
+	[key: string]: ?V
+};
+
+export type GameState = {
+	players: Mapish<PlayerDescriptor>
+};
