@@ -1,11 +1,20 @@
 // @flow
 
-import type { GameActionType } from "./GameActionType";
+export type NothingAction = {
+	type: "Nothing"
+};
 
-export type GameAction = {
-	// The action that was taken
-	type: GameActionType,
-
-	// UUID of player taking the action
+export type ConcedeAction = {
+	type: "Concede",
 	player: string
 };
+
+export type PassPriorityAction = {
+	type: "PassPriority",
+	player: string
+};
+
+export type GameAction =
+	NothingAction |
+	ConcedeAction |
+	PassPriorityAction;

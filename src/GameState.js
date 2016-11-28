@@ -1,6 +1,6 @@
 // @flow
 
-import PlayerDescriptor from "./PlayerDescriptor";
+import type { PlayerDescriptor } from "./PlayerDescriptor";
 
 type Mapish<V> = {
 	[key: string]: ?V

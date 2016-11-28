@@ -13,9 +13,7 @@ export default class RulesAuthority {
 	}
 
 	getInitialState(): GameState {
-		return {
-			players: {}
-		};
+		throw new Error("getInitialState is not implemented");
 	}
 
 	processAction(state: GameState, action: GameAction): GameState {

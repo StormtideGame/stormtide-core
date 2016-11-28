@@ -11,13 +11,16 @@ describe("RulesAuthority", () => {
 		expect(rules).to.be.ok;
 	});
 
-	it("should return a valid initial state", () => {
+	it("should throw on getInitialState", () => {
 		const settings = new GameDescriptor();
 		const rules = new RulesAuthority(settings);
 
-		const state = rules.getInitialState();
+		const using = () => {
+			rules.getInitialState();
+		};
 
-		expect(state).to.be.an("object");
+		expect(rules.getInitialState).to.be.a("function");
+		expect(using).to.throw(Error);
 	});
 
 	it("should throw on processAction", () => {
@@ -30,6 +33,7 @@ describe("RulesAuthority", () => {
 			rules.processAction(any, any);
 		};
 
+		expect(rules.processAction).to.be.a("function");
 		expect(using).to.throw(Error);
 	});
 });

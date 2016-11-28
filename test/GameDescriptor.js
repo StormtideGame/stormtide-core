@@ -14,7 +14,7 @@ describe("GameDescriptor", () => {
 		const settings = new GameDescriptor();
 
 		expect(settings).to.have.all.keys(
-			"playerCount"
+			"players"
 		);
 	});
 });

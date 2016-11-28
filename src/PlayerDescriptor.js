@@ -1,4 +1,7 @@
 // @flow
 
-export default class PlayerDescriptor {
-}
+import type { DeckDescriptor } from "./DeckDescriptor";
+
+export type PlayerDescriptor = {
+	deck: DeckDescriptor
+};
