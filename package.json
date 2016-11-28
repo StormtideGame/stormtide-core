@@ -4,8 +4,8 @@
   "description": "Data and rules engine for Stormtide",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src",
-    "test": "npm run -s lint && flow && cross-env NODE_ENV=test nyc mocha",
+    "lint": "eslint src test",
+    "test": "npm run -s lint && flow && cross-env NODE_ENV=test nyc mocha --recursive",
     "coverage": "cross-env NODE_ENV=test nyc --reporter lcov mocha",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "prepublish": "rm -rf lib; gulp",
