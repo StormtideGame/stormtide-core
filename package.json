@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src test",
     "test": "npm run -s lint && flow && cross-env NODE_ENV=test nyc mocha --recursive",
-    "coverage": "cross-env NODE_ENV=test nyc --reporter lcov mocha",
+    "coverage": "cross-env NODE_ENV=test nyc --reporter lcov mocha --recursive",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "prepublish": "rm -rf lib; gulp",
     "todo": "leasot {src,test}/**/*.js"
