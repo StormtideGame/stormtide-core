@@ -18,13 +18,13 @@ export default class Game {
 		this.history = [];
 
 		// Temporary
-		this.rules = new DefaultRulesAuthority();
+		this.rules = new DefaultRulesAuthority(settings);
 		this.state = this.rules.getInitialState();
 	}
 
 	dispatchAction(action: GameAction) {
 		this.history.push(action);
 
-		this.state = this.rules.processAction(this.state, action, this.settings);
+		this.state = this.rules.processAction(this.state, action);
 	}
 }

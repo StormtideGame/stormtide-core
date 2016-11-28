@@ -1,17 +1,19 @@
 // @flow
 
 import { expect } from "chai";
-import { RulesAuthority } from "stormtide-core";
+import { GameDescriptor, RulesAuthority } from "stormtide-core";
 
 describe("RulesAuthority", () => {
 	it("should be constructable", () => {
-		const rules = new RulesAuthority();
+		const settings = new GameDescriptor();
+		const rules = new RulesAuthority(settings);
 
 		expect(rules).to.be.ok;
 	});
 
 	it("should return a valid initial state", () => {
-		const rules = new RulesAuthority();
+		const settings = new GameDescriptor();
+		const rules = new RulesAuthority(settings);
 
 		const state = rules.getInitialState();
 
@@ -19,12 +21,13 @@ describe("RulesAuthority", () => {
 	});
 
 	it("should throw on processAction", () => {
-		const rules = new RulesAuthority();
+		const settings = new GameDescriptor();
+		const rules = new RulesAuthority(settings);
 
 		const using = () => {
 			// Totally incorrect usage of processAction
 			const any = (null: any);
-			rules.processAction(any, any, any);
+			rules.processAction(any, any);
 		};
 
 		expect(using).to.throw(Error);

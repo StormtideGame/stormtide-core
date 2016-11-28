@@ -7,13 +7,15 @@ import type { GameAction } from "stormtide-core";
 
 describe("DefaultRulesAuthority", () => {
 	it("should be constructable", () => {
-		const rules = new DefaultRulesAuthority();
+		const settings = new GameDescriptor();
+		const rules = new DefaultRulesAuthority(settings);
 
 		expect(rules).to.be.ok;
 	});
 
 	it("should no-op process actions", () => {
-		const rules = new DefaultRulesAuthority();
+		const settings = new GameDescriptor();
+		const rules = new DefaultRulesAuthority(settings);
 
 		const action: GameAction = {
 			type: "Nothing",
@@ -21,8 +23,7 @@ describe("DefaultRulesAuthority", () => {
 		};
 
 		const state = rules.getInitialState();
-		const settings = new GameDescriptor();
-		const newState = rules.processAction(state, action, settings);
+		const newState = rules.processAction(state, action);
 
 		expect(newState).to.be.an("object");
 	});
