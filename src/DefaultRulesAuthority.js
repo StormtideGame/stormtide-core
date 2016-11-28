@@ -13,6 +13,8 @@ type Mapish<V> = { [key: string]: ?V };
 /**
  * Provides a reasonable default rules enforcement engine.
  * This might be factored out into another module eventually.
+ *
+ * Helpful resource: http://media.wizards.com/2016/docs/MagicCompRules_20161111.pdf
  */
 export default class DefaultRulesAuthority extends RulesAuthority {
 	getInitialState(game: Game): GameState {
@@ -33,12 +35,28 @@ export default class DefaultRulesAuthority extends RulesAuthority {
 		return {
 			players,
 			playerTurnOrder,
+			turn: null,
 			priority: null,
+			phase: null,
 			stack: []
 		};
 	}
 
+	_startGame(game: Game) {
+		// TODO: draw opening hands
+
+		game.state.turn = game.state.playerTurnOrder[0];
+		game.state.priority = game.state.playerTurnOrder[0];
+		game.state.phase = "Main1";
+	}
+
 	processAction(game: Game, action: GameAction): GameState {
+		switch (action.type) {
+			case "GameStart":
+				this._startGame(game);
+				break;
+		}
+
 		return game.state;
 	}
 }

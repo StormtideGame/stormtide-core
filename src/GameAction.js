@@ -4,6 +4,10 @@ export type NothingAction = {
 	type: "Nothing"
 };
 
+export type GameStartAction = {
+	type: "GameStart"
+};
+
 export type ConcedeAction = {
 	type: "Concede",
 	player: string
@@ -19,5 +23,6 @@ export type PassPriorityAction = {
  */
 export type GameAction =
 	NothingAction |
+	GameStartAction |
 	ConcedeAction |
 	PassPriorityAction;

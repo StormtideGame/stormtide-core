@@ -28,6 +28,12 @@ export default class Game {
 		this.state = this.rules.getInitialState(this);
 	}
 
+	start() {
+		this.dispatchAction({
+			type: "GameStart"
+		});
+	}
+
 	/**
 	 * Adds an action to the game's history and applies it using the current
 	 * RulesAuthority.
