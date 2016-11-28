@@ -37,14 +37,14 @@
     "eslint": "^3.10.2",
     "eslint-plugin-flowtype": "^2.25.0",
     "fast-async": "^6.1.2",
-    "flow-bin": "^0.34.0",
+    "flow-bin": "^0.36.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-plumber": "^1.1.0",
     "gulp-sourcemaps": "^2.2.0",
     "leasot": "^4.2.1",
     "mocha": "^3.1.2",
-    "nyc": "^9.0.1",
+    "nyc": "^10.0.0",
     "source-map-support": "^0.4.6"
   },
   "nyc": {
