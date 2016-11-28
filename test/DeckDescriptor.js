@@ -4,7 +4,7 @@ import { expect } from "chai";
 import { CardDescriptor, DeckDescriptor } from "stormtide-core";
 
 describe("DeckDescriptor", () => {
-	it("should be instantiable with reasonable defaults", () => {
+	it("should construct with reasonable defaults", () => {
 		const cards = [
 			new CardDescriptor({
 				name: "Storm Crow"

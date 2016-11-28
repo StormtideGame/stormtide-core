@@ -4,7 +4,7 @@ import { expect } from "chai";
 import { CardDescriptor } from "stormtide-core";
 
 describe("CardDescriptor", () => {
-	it("should be instantiable with reasonable defaults", () => {
+	it("should construct with reasonable defaults", () => {
 		const reference = {
 			name: "Storm Crow"
 		};
