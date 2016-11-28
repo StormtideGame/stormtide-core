@@ -14,6 +14,9 @@ export type PassPriorityAction = {
 	player: string
 };
 
+/**
+ * Represents an action that mutates the game's state.
+ */
 export type GameAction =
 	NothingAction |
 	ConcedeAction |

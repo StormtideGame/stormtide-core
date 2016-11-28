@@ -7,6 +7,9 @@ import GameDescriptor from "./GameDescriptor";
 import type { GameState } from "./GameState";
 import type { GameAction } from "./GameAction";
 
+/**
+ * Represents a game, whether ongoing or having taken place in the past.
+ */
 export default class Game {
 	settings: GameDescriptor;
 	state: GameState;
@@ -22,6 +25,10 @@ export default class Game {
 		this.state = this.rules.getInitialState();
 	}
 
+	/**
+	 * Adds an action to the game's history and applies it using the current
+	 * RulesAuthority.
+	 */
 	dispatchAction(action: GameAction) {
 		this.history.push(action);
 

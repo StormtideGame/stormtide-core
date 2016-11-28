@@ -1,11 +1,14 @@
 // @flow
 
-import type { PlayerDescriptor } from "./PlayerDescriptor";
+import type { PlayerState } from "./PlayerState";
 
 type Mapish<V> = {
 	[key: string]: ?V
 };
 
+/**
+ * Describes the game state from action to action.
+ */
 export type GameState = {
-	players: Mapish<PlayerDescriptor>
+	players: Mapish<PlayerState>
 };

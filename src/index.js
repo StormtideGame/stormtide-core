@@ -12,3 +12,4 @@ export type { CardDescriptor } from "./CardDescriptor";
 export type { DeckDescriptor } from "./DeckDescriptor";
 export type { GameAction } from "./GameAction";
 export type { PlayerDescriptor } from "./PlayerDescriptor";
+export type { PlayerState } from "./PlayerState";

@@ -13,7 +13,7 @@ describe("DefaultRulesAuthority", () => {
 		expect(rules).to.be.ok;
 	});
 
-	it("should pass through players", () => {
+	it("should pass through player descriptors", () => {
 		const settings = new GameDescriptor();
 
 		const mockPlayer = ({}: any);
@@ -26,7 +26,6 @@ describe("DefaultRulesAuthority", () => {
 
 		const keys = Object.keys(state.players);
 		expect(keys).to.have.lengthOf(1);
-		expect(state.players[keys[0]]).to.equal(mockPlayer);
 	});
 
 	it("should no-op process actions", () => {
