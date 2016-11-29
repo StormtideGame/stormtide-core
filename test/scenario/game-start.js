@@ -36,6 +36,7 @@ describe("Scenario: Game Start", () => {
 		expect(Object.keys(game.state.players)).to.have.lengthOf(2);
 	});
 
+	// This will change with the addition of pre-game actions
 	it("should give turn and priority to player 1", () => {
 		expect(playerState1).to.be.ok;
 
