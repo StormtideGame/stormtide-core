@@ -1,6 +1,6 @@
 {
   "name": "stormtide-core",
-  "version": "0.0.0",
+  "version": "0.0.0-r1",
   "description": "Data and rules engine for Stormtide",
   "main": "index.js",
   "scripts": {
