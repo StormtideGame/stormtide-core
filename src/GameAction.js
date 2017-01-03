@@ -1,22 +1,22 @@
 // @flow
 
-export type NothingAction = {
+export type NothingAction = {|
 	type: "Nothing"
-};
+|};
 
-export type GameStartAction = {
+export type GameStartAction = {|
 	type: "GameStart"
-};
+|};
 
-export type ConcedeAction = {
+export type ConcedeAction = {|
 	type: "Concede",
 	player: string
-};
+|};
 
-export type PassPriorityAction = {
+export type PassPriorityAction = {|
 	type: "PassPriority",
 	player: string
-};
+|};
 
 /**
  * Represents an action that mutates the game's state.
