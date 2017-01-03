@@ -13,15 +13,13 @@ import type { GameAction } from "./GameAction";
 export default class Game {
 	settings: GameDescriptor;
 	state: GameState;
-	history: GameAction[];
+	history: GameAction[] = [];
 	rules: RulesAuthority;
 
-	_actionQueue: GameAction[];
+	_actionQueue: GameAction[] = [];
 
 	constructor(settings: GameDescriptor) {
 		this.settings = settings;
-		this.history = [];
-		this._actionQueue = [];
 
 		// Temporary
 		this.rules = new DefaultRulesAuthority();

@@ -8,6 +8,8 @@ import type { PlayerState } from "./PlayerState";
 import type { GameState } from "./GameState";
 import type { GameAction } from "./GameAction";
 
+import GameZone from "./GameZone";
+
 type Mapish<V> = { [key: string]: ?V };
 
 /**
@@ -38,12 +40,17 @@ export default class DefaultRulesAuthority extends RulesAuthority {
 			turn: null,
 			priority: null,
 			phase: null,
-			stack: []
+			stack: [],
+			zones: {}
 		};
 	}
 
 	_startGame(game: Game) {
-		// TODO: draw opening hands
+		const stack = new GameZone({ type: "Stack" });
+		const battlefield = new GameZone({ type: "Battlefield" });
+
+		game.state.zones[battlefield.id] = battlefield;
+		game.state.zones[stack.id] = stack;
 
 		game.state.turn = game.state.playerTurnOrder[0];
 		game.state.priority = game.state.playerTurnOrder[0];

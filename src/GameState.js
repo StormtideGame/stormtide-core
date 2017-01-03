@@ -3,6 +3,7 @@
 import type { PlayerState } from "./PlayerState";
 import type { GameEntity } from "./GameEntity";
 import type { GamePhase } from "./GamePhase";
+import GameZone from "./GameZone";
 
 type Mapish<V> = {
 	[key: string]: ?V
@@ -14,6 +15,8 @@ type Mapish<V> = {
 export type GameState = {
 	players: Mapish<PlayerState>,
 	playerTurnOrder: string[],
+
+	zones: Mapish<GameZone>,
 
 	priority: ?string,
 	turn: ?string,
