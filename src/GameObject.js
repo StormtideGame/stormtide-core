@@ -16,6 +16,6 @@ export type PermanentEntity = CardEntity & {|
 /**
  * Represents an entity in the game
  */
-export type GameEntity =
+export type GameObject =
 	PermanentEntity |
 	CardEntity;

@@ -1,7 +1,7 @@
 // @flow
 
 import type { PlayerState } from "./PlayerState";
-import type { GameEntity } from "./GameEntity";
+import type { GameObject } from "./GameObject";
 import type { GamePhase } from "./GamePhase";
 import type { GameZone } from "./GameZone";
 
@@ -17,7 +17,7 @@ export type GameState = {
 	playerTurnOrder: string[],
 
 	zones: Mapish<GameZone>,
-	entities: Mapish<GameEntity>,
+	entities: Mapish<GameObject>,
 
 	priority: ?string,
 	turn: ?string,
