@@ -17,10 +17,9 @@ export type GameState = {
 	playerTurnOrder: string[],
 
 	zones: Mapish<GameZone>,
+	entities: Mapish<GameEntity>,
 
 	priority: ?string,
 	turn: ?string,
-	phase: ?GamePhase,
-
-	stack: GameEntity[]
+	phase: ?GamePhase
 };

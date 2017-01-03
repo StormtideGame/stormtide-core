@@ -9,9 +9,9 @@ export type PlayerState = {
 	// The UUID of the player
 	id: string,
 
-	// The ID of the zone of this players' hand
+	// The ID of the zone of this player's hand
 	handZone: string,
 
-	// The ID of the zone of this players' library
+	// The ID of the zone of this player's library
 	libraryZone: string
 };

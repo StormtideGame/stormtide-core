@@ -24,7 +24,7 @@ export default class DefaultRulesAuthority extends RulesAuthority {
 		state.zones[id] = {
 			id,
 			type,
-			entities: {}
+			entities: []
 		};
 
 		return id;
@@ -41,7 +41,8 @@ export default class DefaultRulesAuthority extends RulesAuthority {
 			priority: null,
 			phase: null,
 			stack: [],
-			zones: {}
+			zones: {},
+			entities: {}
 		};
 
 		for (const descriptor of game.settings.players) {
