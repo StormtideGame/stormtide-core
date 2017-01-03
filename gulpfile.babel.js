@@ -7,6 +7,7 @@ import gulp from "gulp";
 import plumber from "gulp-plumber";
 import babel from "gulp-babel";
 import sourcemaps from "gulp-sourcemaps";
+import watch from "gulp-watch";
 import merge from "merge-stream";
 
 const build: Object = {};
@@ -26,8 +27,8 @@ build.json = (files = "src/**/*.json") => {
 };
 
 build.watch = () => {
-	gulp.watch("src/**/*.js", change => build.lib(change.path));
-	gulp.watch("src/**/*.json", change => build.json(change.path));
+	watch("src/**/*.js", change => build.lib(change.path));
+	watch("src/**/*.json", change => build.json(change.path));
 };
 
 build.default = () => merge([build.lib(), build.json()]);
