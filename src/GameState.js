@@ -1,8 +1,8 @@
 // @flow
 
 import GameZone from "./GameZone";
-import PlayerState from "./PlayerState";
 
+import type { PlayerState } from "./PlayerState";
 import type { GameEntity } from "./GameEntity";
 import type { GamePhase } from "./GamePhase";
 
