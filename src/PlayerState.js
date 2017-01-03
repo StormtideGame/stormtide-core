@@ -1,14 +1,21 @@
 // @flow
 
 import type { PlayerDescriptor } from "./PlayerDescriptor";
+import generateId from "./generateId";
 
 /**
  * Mutable state object representing a player in a game.
  */
-export type PlayerState = {
+export default class PlayerState {
 	// The player's immutable descriptor
-	descriptor: PlayerDescriptor,
+	descriptor: PlayerDescriptor;
 
 	// The UUID of the player
-	id: string
-};
+	id: string;
+
+	constructor(data: $Shape<PlayerState>) {
+		this.id = generateId();
+
+		Object.assign(this, (data: any));
+	}
+}

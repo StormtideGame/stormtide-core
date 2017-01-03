@@ -5,6 +5,8 @@ export { default as GameDescriptor } from "./GameDescriptor";
 export { default as GameState } from "./GameState";
 export { default as RulesAuthority } from "./RulesAuthority";
 
+export { default as PlayerState } from "./PlayerState";
+
 export { default as generateId } from "./generateId";
 
 export type { CardDescriptor } from "./CardDescriptor";
@@ -13,7 +15,6 @@ export type { GameAction } from "./GameAction";
 export type { GameEntity } from "./GameEntity";
 export type { GamePhase } from "./GamePhase";
 export type { PlayerDescriptor } from "./PlayerDescriptor";
-export type { PlayerState } from "./PlayerState";
 
 // Test Data
 export { default as DefaultRulesAuthority } from "./DefaultRulesAuthority";

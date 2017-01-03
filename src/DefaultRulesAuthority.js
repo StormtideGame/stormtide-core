@@ -1,10 +1,9 @@
 // @flow
 
 import RulesAuthority from "./RulesAuthority";
-import generateId from "./generateId";
 import Game from "./Game";
+import PlayerState from "./PlayerState";
 
-import type { PlayerState } from "./PlayerState";
 import type { GameState } from "./GameState";
 import type { GameAction } from "./GameAction";
 
@@ -24,14 +23,10 @@ export default class DefaultRulesAuthority extends RulesAuthority {
 		const players: Mapish<PlayerState> = {};
 
 		for (const descriptor of game.settings.players) {
-			const id = generateId();
+			const player = new PlayerState({ descriptor });
 
-			players[id] = {
-				descriptor,
-				id
-			};
-
-			playerTurnOrder.push(id);
+			players[player.id] = player;
+			playerTurnOrder.push(player.id);
 		}
 
 		return {
