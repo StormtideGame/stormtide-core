@@ -7,7 +7,7 @@ import Game from "./Game";
 import type { PlayerState } from "./PlayerState";
 import type { GameState } from "./GameState";
 import type { GameAction } from "./GameAction";
-import type { GameZone } from "./GameZone";
+import type { GameZoneType } from "./GameZone";
 
 type Mapish<V> = { [key: string]: ?V };
 
@@ -18,21 +18,23 @@ type Mapish<V> = { [key: string]: ?V };
  * Helpful resource: http://media.wizards.com/2016/docs/MagicCompRules_20161111.pdf
  */
 export default class DefaultRulesAuthority extends RulesAuthority {
+	_addZone(state: GameState, type: GameZoneType): string {
+		const id = generateId();
+
+		state.zones[id] = {
+			id,
+			type,
+			entities: {}
+		};
+
+		return id;
+	}
+
 	getInitialState(game: Game): GameState {
 		const playerTurnOrder: string[] = [];
 		const players: Mapish<PlayerState> = {};
 
-		for (const descriptor of game.settings.players) {
-			const player = {
-				id: generateId(),
-				descriptor
-			};
-
-			players[player.id] = player;
-			playerTurnOrder.push(player.id);
-		}
-
-		return {
+		const state: GameState = {
 			players,
 			playerTurnOrder,
 			turn: null,
@@ -41,27 +43,32 @@ export default class DefaultRulesAuthority extends RulesAuthority {
 			stack: [],
 			zones: {}
 		};
+
+		for (const descriptor of game.settings.players) {
+			const handZone = this._addZone(state, "Hand");
+			const libraryZone = this._addZone(state, "Library");
+
+			const player = {
+				id: generateId(),
+				descriptor,
+				handZone,
+				libraryZone
+			};
+
+			players[player.id] = player;
+			playerTurnOrder.push(player.id);
+		}
+
+		this._addZone(state, "Stack");
+		this._addZone(state, "Battlefield");
+
+		return state;
 	}
 
 	_startGame(game: Game) {
-		const stack: GameZone = {
-			type: "Stack",
-			entities: {},
-			id: generateId()
-		};
-
-		const battlefield: GameZone = {
-			type: "Battlefield",
-			entities: {},
-			id: generateId()
-		};
-
-		game.state.zones[battlefield.id] = battlefield;
-		game.state.zones[stack.id] = stack;
-
 		game.state.turn = game.state.playerTurnOrder[0];
 		game.state.priority = game.state.playerTurnOrder[0];
-		game.state.phase = "Main1";
+		game.state.phase = "Untap";
 	}
 
 	processAction(game: Game, action: GameAction): GameState {

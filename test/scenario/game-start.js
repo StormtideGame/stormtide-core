@@ -37,7 +37,7 @@ describe("Scenario: Game Start", () => {
 	});
 
 	// This will change with the addition of pre-game actions
-	it("should give turn and priority to player 1", () => {
+	it("should give turn and priority to player 1 on untap step", () => {
 		expect(playerState1).to.be.ok;
 
 		if (!playerState1) {
@@ -46,5 +46,6 @@ describe("Scenario: Game Start", () => {
 
 		expect(game.state.turn).to.equal(playerState1.id);
 		expect(game.state.priority).to.equal(playerState1.id);
+		expect(game.state.phase).to.equal("Untap");
 	});
 });
