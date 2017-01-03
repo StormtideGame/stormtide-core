@@ -1,10 +1,9 @@
 // @flow
 
-import GameZone from "./GameZone";
-
 import type { PlayerState } from "./PlayerState";
 import type { GameEntity } from "./GameEntity";
 import type { GamePhase } from "./GamePhase";
+import type { GameZone } from "./GameZone";
 
 type Mapish<V> = {
 	[key: string]: ?V

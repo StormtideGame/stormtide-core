@@ -7,8 +7,7 @@ import Game from "./Game";
 import type { PlayerState } from "./PlayerState";
 import type { GameState } from "./GameState";
 import type { GameAction } from "./GameAction";
-
-import GameZone from "./GameZone";
+import type { GameZone } from "./GameZone";
 
 type Mapish<V> = { [key: string]: ?V };
 
@@ -45,8 +44,17 @@ export default class DefaultRulesAuthority extends RulesAuthority {
 	}
 
 	_startGame(game: Game) {
-		const stack = new GameZone({ type: "Stack" });
-		const battlefield = new GameZone({ type: "Battlefield" });
+		const stack: GameZone = {
+			type: "Stack",
+			entities: {},
+			id: generateId()
+		};
+
+		const battlefield: GameZone = {
+			type: "Battlefield",
+			entities: {},
+			id: generateId()
+		};
 
 		game.state.zones[battlefield.id] = battlefield;
 		game.state.zones[stack.id] = stack;
