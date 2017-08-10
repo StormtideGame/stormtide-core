@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src test",
-    "test": "npm run -s lint && flow && cross-env NODE_ENV=test nyc mocha --recursive",
-    "coverage": "cross-env NODE_ENV=test nyc --reporter lcov mocha --recursive",
+    "test": "npm run -s lint && flow && cross-env NODE_ENV=test nyc mocha \"src/**/*.test.js\" --recursive",
+    "coverage": "cross-env NODE_ENV=test nyc --reporter lcov mocha \"src/**/*.test.js\" --recursive",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "prepublishOnly": "rm -rf lib; gulp",
     "todo": "leasot {src,test}/**/*.js"
