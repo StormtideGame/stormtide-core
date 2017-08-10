@@ -1,9 +1,9 @@
 {
-	"presets": ["es2015"],
+	"presets": [],
 	"plugins": [
+		"transform-es2015-modules-commonjs",
 		"transform-decorators-legacy",
 		"transform-class-properties",
-		"fast-async",
 		"transform-object-rest-spread",
 		["module-resolver", {
 			"root": [],
