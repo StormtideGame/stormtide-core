@@ -1,6 +1,6 @@
 {
   "name": "stormtide-core",
-  "version": "0.0.0-r1",
+  "version": "0.0.0-r2",
   "description": "Data and rules engine for Stormtide",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "npm run -s lint && flow && cross-env NODE_ENV=test nyc mocha --recursive",
     "coverage": "cross-env NODE_ENV=test nyc --reporter lcov mocha --recursive",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "prepublish": "rm -rf lib; gulp",
+    "prepublishOnly": "rm -rf lib; gulp",
     "todo": "leasot {src,test}/**/*.js"
   },
   "repository": {
