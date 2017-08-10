@@ -1,16 +1,10 @@
-[version]
-^0.37
-
 [ignore]
-<PROJECT_ROOT>/index.js
-<PROJECT_ROOT>/node_modules/.*
-<PROJECT_ROOT>/lib/.*
-<PROJECT_ROOT>/.nyc_output/.*
+
+[include]
 
 [libs]
-decls/
+
+[lints]
 
 [options]
 module.name_mapper='^stormtide-core$' -> '<PROJECT_ROOT>/src/index'
-module.use_strict=true
-esproposal.decorators=ignore

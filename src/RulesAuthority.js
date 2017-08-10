@@ -9,6 +9,9 @@ import type { GameAction } from "./GameAction";
  * A base class for creating rules interpreters.
  */
 export default class RulesAuthority {
+	constructor(settings: ?Object) {
+	}
+
 	/**
 	 * Returns the state to be used when starting a new game.
 	 */
